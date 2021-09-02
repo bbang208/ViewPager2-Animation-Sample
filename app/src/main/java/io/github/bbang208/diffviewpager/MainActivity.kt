@@ -14,10 +14,10 @@ class MainActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         viewBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        val list = listOf<Boolean>(true, true, false, true, false)
+        val list = listOf<Boolean>(true, false, false, false, false)
 
-        viewBinding.pager.offscreenPageLimit = 3
         viewBinding.pager.setPageTransformer(ZoomOutPageTransformer())
+        viewBinding.pager.offscreenPageLimit = 5
 
         val pagerAdapter = ScreenSlidePagerAdapter(this, list)
         viewBinding.pager.adapter = pagerAdapter
@@ -38,7 +38,7 @@ class MainActivity : FragmentActivity() {
     private inner class ScreenSlidePagerAdapter(fa: FragmentActivity, val list: List<Boolean>) : FragmentStateAdapter(fa) {
         override fun getItemCount(): Int = list.size
 
-        override fun createFragment(position: Int): Fragment = CardFragment(list[position])
+        override fun createFragment(position: Int): Fragment = CardFragment.newInstance(list[position])
     }
 
 }
