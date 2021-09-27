@@ -5,3 +5,6 @@ Viewpager2 로 만든 앱입니다.
 * Boolean값에 따라 다른 View를 Inflate. (DataBinding)
 
 **동일한 CardFragment를 사용하여 Type에 따른 View를 입맛에 따라 사용할 수 있음.**
+
+## Guide
+https://bbang208.github.io/2021-09-04-using-viewpager2-with-animation/
